@@ -18,9 +18,12 @@ Se separa el concepto de versión / implementación
 El código se divide en varios packagename, donde las raices de los mismos son:
 
 core : Aspectos relacionados con extensiones y clases abstractas propias de arquitectura
+
 data:  Endpoints, manejadores de conectividad, y todo lo relacionado a los modelos de servidor y respuestas
+
 domain: Lógica del dominio, aquí además de usar un patrón repository, añado cada caso de uso concreto que usará el viewmodel. 
 Aquí también introduzco el inyector de dependencias, en este caso koin
+
 presentation: Pantallas, ViewModels y adapters, junto con sus posibles estados
 
 Los estados asociados a cada una de las pantallas se representan mediante un NombreActividadScreenState, y representa el estado de la pantalla en ese momento. Se encamarca dentro de una sealed class que maneja una clase parametrizada, que será la clase concreta de esa pantalla. Ej: ScreenState<LoginScreenState>. Puede tener un estado Loading, y un estado Render, y es en este último donde se maneja uno de los posibles estados de pantalla definidos, 
