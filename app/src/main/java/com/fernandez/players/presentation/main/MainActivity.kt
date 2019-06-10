@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     private fun initListeners()
     {
         swipeRefresh.setOnRefreshListener {
-            mViewModel.playersFromServer()
+            mViewModel.playersFromServer(force = true)
         }
     }
 

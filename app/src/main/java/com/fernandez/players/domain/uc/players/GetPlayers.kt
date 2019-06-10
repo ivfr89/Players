@@ -14,7 +14,7 @@ class GetPlayers(val playerRespository: PlayerRepository): UseCase<List<PlayerLi
     override suspend fun run(params: Params): Either<Failure, List<PlayerList>> {
 
 
-        return if(Cache.mCache.isEmpty())
+        return if(Cache.mCache.isEmpty() || params.force)
         {
             val result = playerRespository.getPlayers()
 
@@ -40,7 +40,7 @@ class GetPlayers(val playerRespository: PlayerRepository): UseCase<List<PlayerLi
         var mCache: List<PlayerList> = listOf()
     }
 
-    class Params
+    class Params(val force: Boolean=false)
 
 
 }

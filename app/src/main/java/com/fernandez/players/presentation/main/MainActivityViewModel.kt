@@ -20,11 +20,11 @@ class MainActivityViewModel(val getPlayers: GetPlayers): BaseViewModel()
     private var job = Job()
 
     private var coroutineScope = CoroutineScope(Dispatchers.Default + job)
-    fun playersFromServer()
+    fun playersFromServer(force: Boolean=false)
     {
         this._state.value = ScreenState.Loading
 
-        getPlayers.execute({it.either(::handleFailure, ::handlePlayers)},GetPlayers.Params() ,coroutineScope)
+        getPlayers.execute({it.either(::handleFailure, ::handlePlayers)},GetPlayers.Params(force) ,coroutineScope)
     }
 
     private fun handlePlayers(list: List<PlayerList>) {
