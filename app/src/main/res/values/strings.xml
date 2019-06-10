@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Players</string>
+
+
+
+
+    <!--Common errors-->
+    <string name="no_connection">It seems that you currently don\'t have connectivity on your device, try again</string>
+
+    <string name="player_null">There a a problem retrieving the player data, please try later</string>
+
+    <!--Players-->
+    <string name="n_items">%1$d item(s)</string>
+
+
+</resources>
