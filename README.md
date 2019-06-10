@@ -2,6 +2,10 @@
 
 Demostración de comunicación entre App y API REST usando Clean Arquitecture
 
+## Atención
+
+Algunas imágenes del json no existen, se gestiona utilizando una imagen por defecto en caso de que no pueda cargarse
+
 ## Estructura del proyecto
 
 
